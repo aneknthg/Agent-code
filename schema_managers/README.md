@@ -2,49 +2,49 @@
 
 This directory contains **6 different schema management approaches** to solve the 50,000 token schema problem. Each approach reduces LLM costs by intelligently selecting only relevant schema parts.
 
-## 🚨 The Problem
+## The Problem
 
 **Before**: 50,000 tokens × $0.15/1M = **$0.0075 per query**
 **After**: 5,000 tokens × $0.15/1M = **$0.00075 per query**
 **Savings**: **90% cost reduction** 🎉
 
-## 🏗️ Solution Overview
+## Solution Overview
 
 ### 1. **Schema Chunking & Intelligent Selection** (`schema_chunking.py`)
 - **Approach**: Extracts entities from queries and selects only relevant tables
 - **Best For**: General queries with clear entity mentions
 - **Token Reduction**: 50K → 5K (90% reduction)
-- **Complexity**: ⭐⭐☆☆☆
+
 
 ### 2. **Hierarchical Schema Representation** (`hierarchical_schema.py`)
 - **Approach**: Provides 3 levels of schema detail (basic, detailed, full)
 - **Best For**: Queries with varying complexity requirements
 - **Token Reduction**: 50K → 1K-15K (70-98% reduction)
-- **Complexity**: ⭐⭐⭐☆☆
+
 
 ### 3. **Query Intent Classification** (`intent_based_schema.py`)
 - **Approach**: Classifies query intent and fetches domain-specific tables
 - **Best For**: Domain-specific queries (Medicaid URA, ecommerce, healthcare)
 - **Token Reduction**: 50K → 2K-8K (84-96% reduction)
-- **Complexity**: ⭐⭐⭐⭐☆
+
 
 ### 4. **Schema Embeddings + Vector Search** (`vector_schema.py`)
 - **Approach**: Uses semantic similarity to find relevant schema chunks
 - **Best For**: Complex queries requiring semantic understanding
 - **Token Reduction**: 50K → 3K-10K (80-94% reduction)
-- **Complexity**: ⭐⭐⭐⭐⭐
+
 
 ### 5. **Progressive Schema Loading** (`progressive_schema.py`)
 - **Approach**: Loads schema progressively based on query complexity
 - **Best For**: Adaptive systems that learn from usage patterns
 - **Token Reduction**: 50K → 1K-10K (80-98% reduction)
-- **Complexity**: ⭐⭐⭐⭐☆
+
 
 ### 6. **🆕 LLM Dynamic Schema Manager** (`llm_dynamic_schema.py`)
 - **Approach**: Uses LLMs to dynamically analyze domains and adapt schema selection
 - **Best For**: **Any domain** - automatically adapts to healthcare, ecommerce, finance, etc.
 - **Token Reduction**: 50K → 2K-8K (84-96% reduction)
-- **Complexity**: ⭐⭐⭐⭐⭐
+
 - **🔥 NEW**: **Domain-agnostic** - works with any business domain!
 
 ## 🚀 Quick Start
@@ -81,17 +81,6 @@ print('✅ LLM Dynamic Schema Manager ready!')
 ```bash
 python integrate_schema_managers.py
 ```
-
-## 📊 Performance Comparison
-
-| Manager | Token Reduction | Speed | Accuracy | Best Use Case | Domain Adaptability |
-|---------|----------------|-------|----------|---------------|-------------------|
-| **Chunking** | 90% | ⚡⚡⚡⚡⚡ | ⭐⭐⭐⭐☆ | Simple queries | ⭐⭐☆☆☆ |
-| **Hierarchical** | 70-98% | ⚡⚡⚡⚡☆ | ⭐⭐⭐⭐⭐ | Variable complexity | ⭐⭐⭐☆☆ |
-| **Intent-Based** | 84-96% | ⚡⚡⚡⚡☆ | ⭐⭐⭐⭐⭐ | Domain-specific | ⭐⭐⭐⭐☆ |
-| **Vector** | 80-94% | ⚡⚡⚡☆☆ | ⭐⭐⭐⭐⭐ | Semantic queries | ⭐⭐⭐☆☆ |
-| **Progressive** | 80-98% | ⚡⚡⚡⚡☆ | ⭐⭐⭐⭐☆ | Adaptive systems | ⭐⭐⭐☆☆ |
-| **🆕 LLM Dynamic** | 84-96% | ⚡⚡⚡☆☆ | ⭐⭐⭐⭐⭐ | **Any domain** | ⭐⭐⭐⭐⭐ |
 
 ## 🌍 **Multi-Domain Support**
 
